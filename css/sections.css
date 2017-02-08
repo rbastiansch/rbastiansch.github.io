@@ -97,8 +97,7 @@
 	        align-items: center;
 }
 .project div{
-	width: 30%;
-	
+	width: 30%;	
 	background: #fff;
 	margin: 5px 0px;
 }
@@ -111,6 +110,10 @@
 	background: #222;
 	color: #fff;
 	padding: 5px;
+}
+.project p a{
+	text-decoration: none;
+	color: #00a076;
 }
 
 /*Contact*/
