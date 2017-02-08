@@ -31,7 +31,7 @@ header{
   -webkit-transform: translate(100%, 0);
           transform: translate(100%, 0);
   z-index: 2;
-  background: #aaa6;
+  background: rgba(170,170,170,0.4);
   right: 0;
   padding-top: 10px;
 }
