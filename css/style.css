@@ -1,8 +1,12 @@
-body{
-  font-family: "Montserrat",Helvetica,Arial,sans-serif;
+h1, h2, label, a{
+  font-family: 'Roboto',Arial,sans-serif;
 }
 p{
-  font-family: cursive;
+  font-family: 'Open Sans', sans-serif;
+}
+body{
+  max-width: 1280px;
+	margin: auto;
 }
 main{
   padding: 0;

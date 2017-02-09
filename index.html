@@ -1,13 +1,17 @@
 <!DOCTYPE HTML>
-<html>
+<html lang="en">
 <head>
 	<title>Rafael Bastiansch</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Site de desenvolvimento web na cidade de Umuarama">
+	<meta name="keywords" content="website, desenvolvimento, webdesigner, umuarama">
+	<meta name="author" content="Rafael Bastiansch"> 
 	<link rel="stylesheet" type="text/css" href="css/reset.css">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<link rel="stylesheet" type="text/css" href="css/header.css">
 	<link rel="stylesheet" type="text/css" href="css/sections.css">
-	<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet"> 
+	<link rel="stylesheet" type="text/css" href="css/footer.css">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet">
 </head>
 <body>
 	<header>
@@ -20,21 +24,21 @@
 		</div>
 		<nav class="menu">
 				<ul>
-					<li><a href="#">Home</a></li>
-					<li><a href="#">About</a></li>
-					<li><a href="#">Projects</a></li>
-					<li><a href="#">Contact</a></li>
+					<li><a onClick="scrolling('home')">Home</a></li>
+					<li><a onClick="scrolling('about')">About</a></li>
+					<li><a onClick="scrolling('projects')">Projects</a></li>
+					<li><a onClick="scrolling('contact')">Contact</a></li>
 				</ul>
 		</nav>
 	</header>
 	<main>
-		<section class="sections home">
+		<section class="sections home" id="home">
 			<h2>Who am I?</h2>
 			<div class="circle">
 				<div class="insideCircle"><p>Hello, I'm <b>Rafael Bastiansch</b>, a programming student focused on frontend development.</p></div>
 			</div>
 		</section>
-		<section class="sections about">
+		<section class="sections about" id="about">
 			<h2>The road so far</h2>
 			<div class="courses course1">
 				<img src="img/ifpr.png" alt="Instituto federal do paraná's logo">
@@ -53,7 +57,7 @@
 				<p>...and I've continued studying <a href="https://javascript30.com/">JS</a> and CSS with <a href="https://flexbox.io/" target="blank">flexbox</a></p>
 			</div>
 		</section>
-		<section class="sections portfolio">
+		<section class="sections portfolio" id="projects">
 			<h2>Projects on Github</h2>
 			<div class="project">
 				<div>
@@ -80,27 +84,95 @@
 				<p><a href="https://github.com/rbastiansch/rbastiansch.github.io" target="blank">The fourth</a> is this project you are in, my personal page hosted on github pages.</p>
 			</div>
 		</section>
-		<section class="sections contact">
+		<section class="sections contact" id="contact">
 			<h2>Contact</h2>
 			<form>
 				<div class="inputType">
-					<label for="nome">From</label>
-					<input type="text" id="nome">
+					<label for="nome">Name</label>
+					<input type="text" id="nome" placeholder="Type your name" >
+				</div>
+
+				<div class="inputType">
+					<label for="subject">Subject</label>
+					<input type="text" id="subject"  placeholder="Type your subject">
 				</div>
 
 				<div class="inputType">
 					<label for="email">Email</label>
-					<input type="text" id="email">
-				</div>				
+					<input type="text" id="email"  placeholder="Type your email">
+				</div>	
 
-				
+				<div class="inputType">
+					<label for="message">Message</label>
+					<textarea type="text" id="message"  placeholder="Type your message for us" spellcheck="false"></textarea>
+				</div>				
 
 				<input type="submit" value="Send">
 			</form>
 		</section>
 	</main>
 	<footer>
-		<p>Website developed by Rafael Bastiansch</p>
+		<div>
+			<a href="https://github.com/rbastiansch" target="blank"><img src="img/github.png"></a>
+			<a href="https://br.linkedin.com/in/rafaelbastiansch" target="blank"><img src="img/linkedin.png"></a>
+			<p><a href="tel:44998783965">(44) 99878-3965</a></p>
+		</div>
+		<p id="property">Website developed by Rafael Bastiansch</p>
 	</footer>
+	<script type="text/javascript">
+		let verify = true;
+		const middleValue = 0;
+		const speedIncrement = 0.2;
+
+		function goDown(topPos){
+			const rockBottom = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+			let speed = 2;
+			const middleValue = scrollY + ((topPos - scrollY) / 2);
+
+			const scroll = setInterval(() => {	
+				if(scrollY<middleValue){
+					speed = speed + speedIncrement;
+				}else if(scrollY>middleValue && speed > 1){
+					speed = speed - speedIncrement;
+				}
+
+				window.scroll(0, scrollY + Math.round(speed));
+				if(scrollY >= topPos || scrollY === rockBottom){
+					verify = true;
+					clearInterval(scroll);
+				}
+			}, 1);	
+		}
+
+		function goUp(topPos){
+			let speed = 2;						
+			const middleValue = scrollY + ((topPos - scrollY) / 2);
+
+			const scroll = setInterval(() => {
+				if(scrollY<middleValue && speed > 1){
+					speed = speed - speedIncrement;
+				}else if(scrollY>middleValue){
+					speed = speed + speedIncrement;
+				}
+
+				window.scroll(0, scrollY - Math.round(speed));
+				if(scrollY <= topPos  || scrollY === 0){
+					verify = true;
+					clearInterval(scroll);								
+				}
+			}, 1);
+		}
+
+		function scrolling(element){
+			const topPos = document.getElementById(element).offsetTop - 60;
+			if(topPos>scrollY && verify ){
+				verify = false;
+				goDown(topPos);
+			}else if(topPos<scrollY && verify){
+				verify = false;
+				goUp(topPos);
+			}
+		}
+	</script>
 </body>
 </html>
