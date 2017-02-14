@@ -161,6 +161,9 @@
 	box-shadow: 0px 0px 4px #00a076;
 	
 }
+.inputType span{
+	display: none;
+}
 
 .contact input[type="submit"]{
 	height: 50px;

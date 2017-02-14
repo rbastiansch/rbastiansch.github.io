@@ -86,25 +86,29 @@
 		</section>
 		<section class="sections contact" id="contact">
 			<h2>Contact</h2>
-			<form>
-				<div class="inputType">
-					<label for="nome">Name</label>
-					<input type="text" id="nome" placeholder="Type your name" >
+			<form name="form" onSubmit="return validatorFinal();">
+				<div class="inputType" id="asb">
+					<label for="name">Name</label>
+					<input type="text" id="name" placeholder="Type your name" onblur="validator('name')" >
+					<span>Type a real name</span>
 				</div>
 
 				<div class="inputType">
 					<label for="subject">Subject</label>
-					<input type="text" id="subject"  placeholder="Type your subject">
+					<input type="text" id="subject"  placeholder="Type your subject" onblur="validator('subject')">
+					<span>Type a subject</span>
 				</div>
 
 				<div class="inputType">
 					<label for="email">Email</label>
-					<input type="text" id="email"  placeholder="Type your email">
+					<input type="text" id="email"  placeholder="Type your email" onblur="validator('email')">
+					<span>Type a valid email address</span>
 				</div>	
 
 				<div class="inputType">
 					<label for="message">Message</label>
-					<textarea type="text" id="message"  placeholder="Type your message for us" spellcheck="false"></textarea>
+					<textarea type="text" id="message"  placeholder="Type your message for us" spellcheck="false" onblur="validator('message')"></textarea>
+					<span>Type your message</span>
 				</div>				
 
 				<input type="submit" value="Send">
@@ -119,60 +123,7 @@
 		</div>
 		<p id="property">Website developed by Rafael Bastiansch</p>
 	</footer>
-	<script type="text/javascript">
-		let verify = true;
-		const middleValue = 0;
-		const speedIncrement = 0.2;
-
-		function goDown(topPos){
-			const rockBottom = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-			let speed = 2;
-			const middleValue = scrollY + ((topPos - scrollY) / 2);
-
-			const scroll = setInterval(() => {	
-				if(scrollY<middleValue){
-					speed = speed + speedIncrement;
-				}else if(scrollY>middleValue && speed > 1){
-					speed = speed - speedIncrement;
-				}
-
-				window.scroll(0, scrollY + Math.round(speed));
-				if(scrollY >= topPos || scrollY === rockBottom){
-					verify = true;
-					clearInterval(scroll);
-				}
-			}, 1);	
-		}
-
-		function goUp(topPos){
-			let speed = 2;						
-			const middleValue = scrollY + ((topPos - scrollY) / 2);
-
-			const scroll = setInterval(() => {
-				if(scrollY<middleValue && speed > 1){
-					speed = speed - speedIncrement;
-				}else if(scrollY>middleValue){
-					speed = speed + speedIncrement;
-				}
-
-				window.scroll(0, scrollY - Math.round(speed));
-				if(scrollY <= topPos  || scrollY === 0){
-					verify = true;
-					clearInterval(scroll);								
-				}
-			}, 1);
-		}
-
-		function scrolling(element){
-			const topPos = document.getElementById(element).offsetTop - 60;
-			if(topPos>scrollY && verify ){
-				verify = false;
-				goDown(topPos);
-			}else if(topPos<scrollY && verify){
-				verify = false;
-				goUp(topPos);
-			}
-		}
-	</script>
+	<script type="text/javascript" src="js/scroll.js"></script>
+	<script type="text/javascript" src="js/verifyForm.js"></script>
 </body>
 </html>

@@ -151,14 +151,13 @@ header{
     transition: all 500ms ease;
     border-bottom: solid 3px #0000;
     font-size: 0.8em;
-    cursor: pointer;
   }
   .menu ul li a:hover{
     border-bottom: solid 3px #b109aa;
     color: #eee;    
   }  
   
-  .label-toggle{
+  .label-toggle, .label-toggle-close{
     display: none;
   }
 }
