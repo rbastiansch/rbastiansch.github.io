@@ -1,4 +1,4 @@
-header{
+header {
   background-color: #222;
   position: fixed;
   width: 100%;
@@ -7,7 +7,7 @@ header{
   z-index: 1;
   left: 0;
 }
-.logo{
+.logo {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -17,7 +17,7 @@ header{
       -ms-flex-align: center;
           align-items: center;
 }
-.logo h1{
+.logo h1 {
   width: 100%;
   text-align: center;
   color: #eee;
@@ -49,8 +49,7 @@ header{
   padding: 0.2em 0;
   margin: 0px 5% 10px 5%;
 }
-.menu ul li a{
-  text-decoration: none;
+.menu ul li a {
   color: #aaa;
   -webkit-transition: all 1s ease;
   transition: all 1s ease;
@@ -60,10 +59,10 @@ header{
 
 /*- - - - - - */
 
-#menu-toggle{
+#menu-toggle {
   display: none;
 }
-.label-toggle{
+.label-toggle {
   position: absolute;
   width: 50px;
   z-index: 2;
@@ -76,13 +75,13 @@ header{
   -webkit-transition: all .2s ease;
   transition: all .2s ease;
 }
-.label-toggle::before{
+.label-toggle::before {
   content: "";
   display: block;
   height: 4px;
   background: #aaa;
 }
-.label-toggle-close{
+.label-toggle-close {
   position: fixed;
   right: 0;
   top: 0;
@@ -91,14 +90,14 @@ header{
   width: 70px;
   cursor: pointer;
 }
-#menu-toggle:checked ~ .label-toggle-close{
+#menu-toggle:checked ~ .label-toggle-close {
   cursor: pointer;
 }
 #menu-toggle:checked ~ .menu {
       -webkit-transform: translate(0, 0);
               transform: translate(0, 0);
 }
-#menu-toggle:checked ~ .label-toggle{
+#menu-toggle:checked ~ .label-toggle {
   padding: 0px;
   background: #aaa;
   border: none;
@@ -107,17 +106,17 @@ header{
   z-index: 4;
   margin: 30px 10px;
 }
-#menu-toggle:checked ~ .label-toggle:before{
+#menu-toggle:checked ~ .label-toggle:before {
   background: #aaa;
   -webkit-transform: rotate(90deg);
           transform: rotate(90deg);
 }
 
-@media (min-width: 768px){
-  .logo{
+@media (min-width: 768px) {
+  .logo {
     width: 25%;
   }
-  .menu{
+  .menu {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -128,7 +127,7 @@ header{
     padding-top: 0;
     background: none;
   }
-  .menu ul{    
+  .menu ul {    
     display: -webkit-box;    
     display: -ms-flexbox;    
     display: flex;
@@ -142,22 +141,22 @@ header{
         -ms-flex-align: center;
             align-items: center;
   }
-  .menu ul li{    
+  .menu ul li {    
     background: none;
   }
-  .menu ul li a{
+  .menu ul li a {
     color: gray;
     -webkit-transition: all 500ms ease;
     transition: all 500ms ease;
     border-bottom: solid 3px #0000;
     font-size: 0.8em;
   }
-  .menu ul li a:hover{
+  .menu ul li a:hover {
     border-bottom: solid 3px #b109aa;
     color: #eee;    
   }  
   
-  .label-toggle, .label-toggle-close{
+  .label-toggle, .label-toggle-close {
     display: none;
   }
 }

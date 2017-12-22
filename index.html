@@ -33,97 +33,80 @@
 	</header>
 	<main>
 		<section class="sections home" id="home">
-			<h2>Who am I?</h2>
-			<div class="circle">
-				<div class="insideCircle"><p>Hello, I'm <b>Rafael Bastiansch</b>, a programming student focused on frontend development.</p></div>
+			<div class="info">
+				<p>Hello, I'm <b>Rafael Bastiansch</b>, a frontend developer.</p>
 			</div>
 		</section>
 		<section class="sections about" id="about">
 			<h2>The road so far</h2>
-			<div class="courses course1">
-				<img src="img/ifpr.png" alt="Instituto federal do paraná's logo">
-				<p>Vocational Degree on IT - <a href="http://umuarama.ifpr.edu.br/cursos/informatica/" target="blank">IFPR</a></p>
+			<div class="topic">
+				<div class="title">
+					<h4>- IFPR</h4>					
+				</div>
+				<div class="description">
+					<p>I've studied for a year and a half at IFPR, I did vocational degree on IT. I've learn some stuff like Java, SQL, HTML/CSS, robotics, computer maintenance and so on.</p>
+				</div>
 			</div>
-			<div class="courses course1">
-				<img src="img/youtube.png" alt="Youtube's logo">
-				<p>I already knew HTML, CSS, but I needed to learn more and <a href="https://www.youtube.com/playlist?list=PLB7wuPF7rlckDdLVxueGuQIpI_3Nl2pCt" target="blank">more</a></p>
-			</div>
-			<div class="courses course1">
-				<img src="img/khanacademy.png" alt="Khan Academy's logo">
-				<p>Okay, then I've started to studying <a href="https://pt.khanacademy.org/computing/computer-programming/programming" target="blank">Javascript</a>...</p>
-			</div>
-			<div class="courses course1">
-				<img src="img/javascript30.png" alt="Javascript course's logo">
-				<p>...and I've continued studying <a href="https://javascript30.com/">JS</a> and CSS with <a href="https://flexbox.io/" target="blank">flexbox</a></p>
+			<div class="topic">
+				<div class="title">
+					<h4>- Langowski</h4>
+				</div>
+				<div class="description">
+					<p>Working as web developer for 3 months where I did programming in VueJS, Bootstrap and some tasks using PHP(CodeIgniter), SQL.</p>
+				</div>
 			</div>
 		</section>
 		<section class="sections portfolio" id="projects">
 			<h2>Projects on Github</h2>
 			<div class="project">
-				<div>
-					<img src="img/java.png" alt="java logo">
+				<div class="title">
+					<h4>- <a href="https://github.com/rbastiansch/prospere-app">Vue project</a></h4>
 				</div>
-				<p><a href="https://github.com/rbastiansch/JahBless" target="blank">My first project</a> coming from my Vocational degree on IFPR, it's a CRUD system made using Java/Eclipse. *CRUD works, but not throughout the program.</p>
+				<div class="description">
+					<p>This app uses an API, have features like login, get users contacts, view user contact and adds new contact, has been configured with Vue-cli, Vuex, Axios, Sass and tests end2end.</p>
+				</div>
 			</div>
 			<div class="project">
-				<div>
-					<img src="img/code.png" alt="code logo">
+				<div class="title">
+					<h4>- <a href="https://github.com/rbastiansch/todo-list">React/Redux Project</a></h4>
 				</div>
-				<p><a href="https://github.com/rbastiansch/com.clavierdev" target="blank">My second project</a> starts after a while my Vocational degree, I and my friends develop a website for our garage company, well, it didn't work out.</p>
+				<div class="description">
+					<p>This is a todo list, where uses Redux to manage state, you can add, complete and delete todos, has been configured with Webpack, Sass, Babel.</p>
+				</div>
 			</div>
 			<div class="project">
-				<div>
-					<img src="img/js.png" alt="javascrip logo">
+				<div class="title">
+					<h4>- <a href="https://github.com/rbastiansch/rbastiansch.github.io">My personal website</a></h4>
 				</div>
-				<p><a href="https://github.com/rbastiansch/SmoothScroll" target="blank">My third project</a> I started after all my Javascript's courses, it's just a Smooth Scroll using Javascript, I could not found then, so I develop my own.</p>
+				<div class="description">
+					<p>This project I've used only HTML, CSS and JavaScript.</p>
+				</div>
 			</div>
-			<div class="project">
-				<div>
-					<img src="img/octocat.png" alt="github pages logo">
-				</div>
-				<p><a href="https://github.com/rbastiansch/rbastiansch.github.io" target="blank">The fourth</a> is this project you are in, my personal page hosted on github pages.</p>
-			</div>
-		</section>
-		<section class="sections contact" id="contact">
-			<h2>Contact</h2>
-			<form name="form" onSubmit="return validatorFinal();">
-				<div class="inputType" id="asb">
-					<label for="name">Name</label>
-					<input type="text" id="name" placeholder="Type your name" onblur="validator('name')" >
-					<span>Type a real name</span>
-				</div>
-
-				<div class="inputType">
-					<label for="subject">Subject</label>
-					<input type="text" id="subject"  placeholder="Type your subject" onblur="validator('subject')">
-					<span>Type a subject</span>
-				</div>
-
-				<div class="inputType">
-					<label for="email">Email</label>
-					<input type="text" id="email"  placeholder="Type your email" onblur="validator('email')">
-					<span>Type a valid email address</span>
-				</div>	
-
-				<div class="inputType">
-					<label for="message">Message</label>
-					<textarea id="message"  placeholder="Type your message for us" spellcheck="false" onblur="validator('message')"></textarea>
-					<span>Type your message</span>
-				</div>				
-
-				<input type="submit" value="Send">
-			</form>
 		</section>
 	</main>
-	<footer>
-		<div>
-			<a href="https://github.com/rbastiansch" target="blank"><img src="img/github.png" alt="github logo"></a>
-			<a href="https://br.linkedin.com/in/rafaelbastiansch" target="blank"><img src="img/linkedin.png" alt="linkedin logo"></a>
-			<p><a href="tel:44998783965">(44) 99878-3965</a></p>
+	<footer id="contact">
+		<div class="main">
+			<div class="links">
+				<div class="logo">
+					<a href="https://github.com/rbastiansch" target="blank"><img src="img/github.png" alt="github logo"></a>	
+				</div>
+				<div class="logo">
+					<a href="https://br.linkedin.com/in/rafaelbastiansch" target="blank"><img src="img/linkedin.png" alt="linkedin logo"></a>
+				</div>
+			</div>
+			<div class="contacts">
+				<div class="contact">
+					<span>Phone: </span>
+					<p><a href="tel:44998783965">(44) 99878-3965</a></p>
+				</div>
+				<div class="contact">
+					<span>Skype: </span>
+					<p>rafael.bastiansch</p>
+				</div>
+			</div>
 		</div>
 		<p id="property">Website developed by Rafael Bastiansch</p>
 	</footer>
 	<script type="text/javascript" src="js/scroll.js"></script>
-	<script type="text/javascript" src="js/verifyForm.js"></script>
 </body>
 </html>
